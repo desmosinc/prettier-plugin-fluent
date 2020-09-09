@@ -8,6 +8,7 @@ const plugin: prettier.Plugin = {
     {
       name: 'Fluent',
       parsers: ['fluent-parse'],
+      extensions: ['.ftl'],
     },
   ],
   parsers: {
