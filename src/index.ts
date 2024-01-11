@@ -2,7 +2,6 @@ import * as prettier from 'prettier';
 import * as FTL from '@fluent/syntax';
 
 // A prettier plugin that alphabetizes the entries in an Fluent file
-
 const plugin: prettier.Plugin = {
   languages: [
     {
@@ -36,11 +35,11 @@ const plugin: prettier.Plugin = {
   printers: {
     'fluent-ast': {
       print(
-        path: prettier.FastPath,
+        path: prettier.AstPath,
         _options: prettier.ParserOptions,
-        _print: (path: prettier.FastPath) => prettier.Doc
+        _print: (path: prettier.AstPath) => prettier.Doc,
       ): prettier.Doc {
-        const node: FTL.Resource = path.getValue();
+        const node: FTL.Resource = path.node;
 
         const entries: {
           id: string;
